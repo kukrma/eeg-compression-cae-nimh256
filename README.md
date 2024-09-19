@@ -16,7 +16,7 @@ If we follow the flow of the article, the order in which the files are executed 
 1) `overview.py` – loading and extracting the EEG signals using MNE, computing basic characteristics, and visualisation of the signal;
 2) `stats_compute.py` – computing statistics (correlation, autocorrelation) and saving the results to files;
 3) `stats_visualize.py` – visualization of statistical analysis results, applying UPGMA and saving the array indices used for reordering the channels during testing;
-4) `preprocess.py` – splitting REG signals into chunks and shuffling them, making tensor datasets for training and testing the neural network;
+4) `preprocess.py` – splitting EEG signals into chunks and shuffling them, making tensor datasets for training and testing the neural network;
 5) `ae_training.py` – definition of the `CAE` (convolutional autoencoder) class and training the network on the original order of channels;
 6) `ae_trainingRE.py` – same as `ae_training.py`, but with the reordered channels using UPGMA;
 7) `ae_visualize.py` – visualization of the loss curve;
