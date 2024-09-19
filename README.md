@@ -20,7 +20,7 @@ If we follow the flow of the article, the order in which the files are executed 
 5) `ae_training.py` – definition of the `CAE` (convolutional autoencoder) class and training the network on the original order of channels;
 6) `ae_trainingRE.py` – same as `ae_training.py`, but with the reordered channels using UPGMA;
 7) `ae_visualize.py` – visualization of the loss curve;
-8) `ae_compressor.py` – definition of the `Compressor` class, which is used to compress and decompress tensor datasets, as well as to evaluate the compressions using CR (compression ratio), PRD (percentage root mean square difference), and RMSE (root mean square error);
+8) `ae_compressor.py` – definition of the `Compressor` class, which is used to compress and decompress tensor datasets, as well as to evaluate the compressions using PRD (percentage root mean square difference), and RMSE (root mean square error);
 9) `results_calculations.py` – calculations and plots of results.
 
 ## Original Directory Tree
