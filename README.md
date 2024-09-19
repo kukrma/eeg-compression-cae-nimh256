@@ -24,7 +24,7 @@ If we follow the flow of the article, the order in which the files are executed 
 9) `results_calculations.py` – calculations and plots of results.
 
 ## Original Directory Tree
-The code contains paths reflecting the file structure used by the author, which can be altered. For clarity, it was as follows (files irrelevant to the code were excluded):
+The code contains paths reflecting the file structure used by the author, which can be altered. For clarity, it was as follows (files and folders irrelevant to the code were excluded):
 ```
 └── pyPROJECT/
     ├── data/
