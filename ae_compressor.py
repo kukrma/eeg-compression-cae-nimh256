@@ -237,7 +237,7 @@ if __name__ == "__main__":
     '''
     # compressing/decompressing only single tensor dataset:
     '''
-    compressor.compress_dataset(f"./data/float32/tensors32_0.pt", "./outputs/compressed/TEMP", 1)
-    compressor.decompress_dataset(f"./outputs/compressed/TEMP/tensors32_0", "./outputs/decompressed")
-    compressor.evaluate_dataset(f"./data/float32/tensors32_0.pt", f"./outputs/decompressed/tensors32_0.pt")
+    compressor.compress_dataset("./data/float32/tensors32_0.pt", "./outputs/compressed/TEMP", 3)
+    compressor.decompress_dataset("./outputs/compressed/TEMP/tensors32_0", "./outputs/decompressed")
+    compressor.evaluate_dataset("./data/float32/tensors32_0.pt", "./outputs/decompressed/tensors32_0.pt")
     '''
