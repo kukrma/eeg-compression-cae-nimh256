@@ -1,6 +1,7 @@
 # =========================================================================== #
 # author:  Martin KUKRÁL                                                      #
 # date:    September 19, 2024                                                 #
+# Python:  3.11.4                                                             #
 # licence: CC BY-NC 4.0                                                       #
 # purpose: 1) define the CAE class                                            #
 #          2) neural network training setup                                   #

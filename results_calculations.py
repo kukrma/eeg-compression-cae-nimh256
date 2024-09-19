@@ -1,6 +1,7 @@
 # =========================================================================== #
 # author:  Martin KUKRÁL                                                      #
 # date:    September 19, 2024                                                 #
+# Python:  3.11.4                                                             #
 # licence: CC BY-NC 4.0                                                       #
 # purpose: 1) plot the changes in compressed size for one tensor dataset      #
 #          2) plot the CRs, PRDs, and RMSEs                                   #

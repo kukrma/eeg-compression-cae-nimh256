@@ -1,6 +1,7 @@
 # =========================================================================== #
 # author:  Martin KUKRÁL                                                      #
 # date:    September 19, 2024                                                 #
+# Python:  3.11.4                                                             #
 # licence: CC BY-NC 4.0                                                       #
 # purpose: 1) split the data                                                  #
 #          2) load and shuffle the EEG chunks                                 #

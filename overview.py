@@ -1,6 +1,7 @@
 # =========================================================================== #
 # author:  Martin KUKRÁL                                                      #
 # date:    September 19, 2024                                                 #
+# Python:  3.11.4                                                             #
 # licence: CC BY-NC 4.0                                                       #
 # purpose: 1) loading and extracting the EEG data using MNE                   #
 #          2) calculating basic characteristics of the signal                 #
