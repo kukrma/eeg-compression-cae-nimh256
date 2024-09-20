@@ -3,6 +3,8 @@ This GitHub repository contains the code used for the purposes of the article *N
 
 This repository is linked to Zenodo, where it is accompanied by one testing tensor dataset (see the article for explanation) for demonstration purposes, as well as the pre-trained parameters to the neural network. The original raw dataset is not made publicly available, but could be shared upon reasonable request.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13799026.svg)](https://doi.org/10.5281/zenodo.13799026)
+
 [![CC BY-NC 4.0][cc-by-nc-shield]][cc-by-nc]
 
 [![CC BY-NC 4.0][cc-by-nc-image]][cc-by-nc]
@@ -24,9 +26,9 @@ To use this code, you need to first install Python on your computer and optional
 | torch       | 2.1.1+cu121 |
 | tqdm        | 4.66.1      |
 
-With everything prepared, the code should be ready to use. Given that we have performed a case study, the code is not fully generalized, but tailored specifically to the 256-channel binocular rivalry dataset by NIMH. If you want to apply this method to other EEG datasets, you would have to do some adjustments, such as changing the way in which the EEG signal is loaded and preprocessed (if it is in some other format), changing the neural network architecture (if the number of channels is different), etc. In the future, we would like to improve upon this code and make it more generally usable, which was out of scope of the original paper.
+With everything prepared, the code should be ready to use. Given that we have performed a case study, the code is not fully generalized, but tailored specifically to the 256-channel binocular rivalry dataset by NIMH. If you want to apply this method to other EEG datasets, some adjustments might be necessary, e.g., changing the way in which the EEG signal is loaded and preprocessed (if it is in some other format), changing the neural network architecture (if the number of channels is different), etc. In the future, we would like to improve upon this code and make it more generally usable, which was out of the scope of the original paper.
 
-The raw dataset used in the article is not made publicly available, but one testing tensor dataset and the pre-trained network parameters are published on Zenodo, so the `ae_compressor.py` script should be usable for demonstration purposes by anyone, once you download the `tensors32_0.pt` and `params.pt` files from Zenodo (alternativelly, you can use the `paramsRE.pt` with `reorder.npy` for the UPGMA version). In the `ae_compressor.py` script, you then add path to the `params.pt` file when initializing the `Compressor` class, which will then allow you to perform compression using `.compress_dataset()`, decompression with `.decompress_dataset()`, and the evaluation with PRD and RMSE using `.evaluate_dataset()` (all three methods are parametrized by paths to relevant files). To apply additional lossless folder compression to the compressed state, you need to manually use the 7-Zip software (or any other, but this one was used in the study).
+The raw dataset used in the article is not made publicly available, but one testing tensor dataset and the pre-trained network parameters are published here on Zenodo, so the `ae_compressor.py` script should be usable for demonstration purposes by anyone once you download the `tensors32_0.pt` and `params.pt` files from Zenodo (alternativelly, you can use the `paramsRE.pt` with `reorder.npy` for the UPGMA version). In the `ae_compressor.py` script, you then add path to the `params.pt` file when initializing the `Compressor` class, which will subsequently allow you to perform compression using `.compress_dataset()`, decompression with `.decompress_dataset()`, and the evaluation with PRD and RMSE using `.evaluate_dataset()` (all three methods are parametrized by paths to relevant files). To apply additional lossless folder compression to the compressed state, you need to manually use the 7-Zip software (or any other, but this one was used in the study).
 
 The source code files contain many comments with descriptions of individual steps and parameters used by the defined classes.
 
