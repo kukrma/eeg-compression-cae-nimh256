@@ -11,6 +11,26 @@ The code is mirrored on Zenodo, where it is accompanied by one testing tensor da
 [cc-by-nc-image]: https://licensebuttons.net/l/by-nc/4.0/88x31.png
 [cc-by-nc-shield]: https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg
 
+## How to Use
+To use this code, you need to first install Python on your computer and optionally some IDE in which you can comfortably interact with the scripts. Specifically, I have used **Python version 3.11.4** and the following libraries:
+| LIBRARY     | VERSION     |
+| ----------- | -------     |
+| matplotlib  | 3.7.2       |
+| mne         | 1.6.1       |
+| numpy       | 1.25.2      |
+| seaborn     | 0.13.0      |
+| scipy       | 1.11.2      |
+| statsmodels | 0.14.0      |
+| torch       | 2.1.1+cu121 |
+| tqdm        | 4.66.1      |
+
+With everything prepared, the code should be ready to use. Given that we have performed a case study, the code is not fully generalized, but tailored specifically to the 256-channel binocular rivalry dataset by NIMH. If you want to apply this method to other EEG datasets, you would have to do some adjustments, such changing the way in which the EEG signal is loaded and preprocessed (if it is in some other format), changing the neural network architecture (if the number of channels is different) etc. In the future, we would like to improve upon this code and make it more generally usable, which was out of scope of the original paper.
+
+The raw dataset used in the article is not made publicly available, but one testing tensor dataset and the pre-trained network parameters are published on Zenodo, so the `ae_compressor.py` script should be usable for demonstration purposes by anyone, once you the `tensors32_0.pt` and `params.pt` files from Zenodo (alternativelly, you can use the `paramsRE.pt` with `reorder.npy` for the UPGMA version). In the `ae_compressor.py` script, you then add paths to these files when initializing the `Compressor` class, which will then allow you to perform compression using `.compress_dataset()`, decompression with `.decompress_dataset()`, and the evaluation with PRD and RMSE using `.evaluate_dataset()` (all three methods are parametrized by paths to relevant files). To apply additional folder compression to the compressed state, you need to manually use the 7-Zip software (or any other, but this was used in the study).
+
+The source code files contain many comments with descriptions of individual steps and parameters used by the defined classes.
+
+
 ## Description of Files
 If we follow the flow of the article, the order in which the files are executed is:
 1) `overview.py` – loading and extracting the EEG signals using MNE, computing basic characteristics, and visualisation of the signal;
