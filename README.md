@@ -1,7 +1,7 @@
 # 256-channel EEG Signal Compression Using a Convolutional Autoencoder: Binocular Rivalry Use Case
 This GitHub repository contains the code used for the purposes of the article *Near-lossless EEG Signal Compression Using a Convolutional Autoencoder: Case Study for 256-channel Binocular Rivalry Dataset*, which is currently in works (once published, the necessary links to the article will be added).
 
-The code is mirrored on Zenodo, where it is accompanied by one testing tensor dataset (see the article for explanation) for demonstration purposes, as well as the pre-trained parameters to the neural network. The original raw dataset is not made publicly available, but could be shared upon reasonable request.
+This repository is linked to Zenodo, where it is accompanied by one testing tensor dataset (see the article for explanation) for demonstration purposes, as well as the pre-trained parameters to the neural network. The original raw dataset is not made publicly available, but could be shared upon reasonable request.
 
 [![CC BY-NC 4.0][cc-by-nc-shield]][cc-by-nc]
 
@@ -18,15 +18,15 @@ To use this code, you need to first install Python on your computer and optional
 | matplotlib  | 3.7.2       |
 | mne         | 1.6.1       |
 | numpy       | 1.25.2      |
-| seaborn     | 0.13.0      |
 | scipy       | 1.11.2      |
+| seaborn     | 0.13.0      |
 | statsmodels | 0.14.0      |
 | torch       | 2.1.1+cu121 |
 | tqdm        | 4.66.1      |
 
-With everything prepared, the code should be ready to use. Given that we have performed a case study, the code is not fully generalized, but tailored specifically to the 256-channel binocular rivalry dataset by NIMH. If you want to apply this method to other EEG datasets, you would have to do some adjustments, such changing the way in which the EEG signal is loaded and preprocessed (if it is in some other format), changing the neural network architecture (if the number of channels is different) etc. In the future, we would like to improve upon this code and make it more generally usable, which was out of scope of the original paper.
+With everything prepared, the code should be ready to use. Given that we have performed a case study, the code is not fully generalized, but tailored specifically to the 256-channel binocular rivalry dataset by NIMH. If you want to apply this method to other EEG datasets, you would have to do some adjustments, such as changing the way in which the EEG signal is loaded and preprocessed (if it is in some other format), changing the neural network architecture (if the number of channels is different), etc. In the future, we would like to improve upon this code and make it more generally usable, which was out of scope of the original paper.
 
-The raw dataset used in the article is not made publicly available, but one testing tensor dataset and the pre-trained network parameters are published on Zenodo, so the `ae_compressor.py` script should be usable for demonstration purposes by anyone, once you download the `tensors32_0.pt` and `params.pt` files from Zenodo (alternativelly, you can use the `paramsRE.pt` with `reorder.npy` for the UPGMA version). In the `ae_compressor.py` script, you then add paths to these files when initializing the `Compressor` class, which will then allow you to perform compression using `.compress_dataset()`, decompression with `.decompress_dataset()`, and the evaluation with PRD and RMSE using `.evaluate_dataset()` (all three methods are parametrized by paths to relevant files). To apply additional folder compression to the compressed state, you need to manually use the 7-Zip software (or any other, but this was used in the study).
+The raw dataset used in the article is not made publicly available, but one testing tensor dataset and the pre-trained network parameters are published on Zenodo, so the `ae_compressor.py` script should be usable for demonstration purposes by anyone, once you download the `tensors32_0.pt` and `params.pt` files from Zenodo (alternativelly, you can use the `paramsRE.pt` with `reorder.npy` for the UPGMA version). In the `ae_compressor.py` script, you then add path to the `params.pt` file when initializing the `Compressor` class, which will then allow you to perform compression using `.compress_dataset()`, decompression with `.decompress_dataset()`, and the evaluation with PRD and RMSE using `.evaluate_dataset()` (all three methods are parametrized by paths to relevant files). To apply additional lossless folder compression to the compressed state, you need to manually use the 7-Zip software (or any other, but this one was used in the study).
 
 The source code files contain many comments with descriptions of individual steps and parameters used by the defined classes.
 
@@ -75,7 +75,8 @@ The code contains paths reflecting the file structure used by the author, which 
     |   |   ├── 4uV/
     |   |   ├── 6uV/
     |   |   ├── 8uV/
-    |   |   └── 10uV/
+    |   |   ├── 10uV/
+    |   |   └── TEMP/
     |   ├── decompressed/
     |   ├── autocorrelations.npy
     |   ├── correlations.npy
