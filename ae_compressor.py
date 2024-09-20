@@ -4,7 +4,7 @@
 # Python:  3.11.4                                                             #
 # licence: CC BY-NC 4.0                                                       #
 # purpose: 1) define the Compressior class                                    #
-#          2) use it with the pretrained CAE to compress/decompress           #
+#          2) use it with the pre-trained CAE to compress/decompress          #
 # =========================================================================== #
 import torch                      # 2.1.1+cu121
 import numpy as np                # 1.25.2
@@ -52,7 +52,7 @@ class Compressor():
     
     def rle_decode(self, encoded):
         ###########################################################################
-        # encoded - decode the RLE-encoded sequence                               #
+        # encoded - the RLE-encoded sequence to be decoded                        #
         ###########################################################################
         decoded = np.zeros(512000).astype(np.int8) #empty array
         # if length is even:
