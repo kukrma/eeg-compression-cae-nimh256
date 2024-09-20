@@ -47,7 +47,7 @@ axs["reord"].scatter(20, mean_testRE, marker="_", s=500, color="darkorange", lab
 axs["reord"].errorbar(20, mean_testRE, yerr=std_testRE, color="darkorange", capsize=5, alpha=0.5)
 axs["reord"].plot(range(1, 21), validlossRE, color="cornflowerblue", linewidth=2, label="validation dataset")
 axs["reord"].set_xlabel("epochs")
-axs["orig"].set_ylabel("loss")
+axs["reord"].set_ylabel("loss")
 axs["reord"].set_xticks(range(1, 21)[1::2])
 axs["reord"].grid(color="silver", linestyle="--", linewidth=0.5)
 axs["reord"].set_title("REORDERED")

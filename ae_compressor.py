@@ -3,7 +3,7 @@
 # date:    September 19, 2024                                                 #
 # Python:  3.11.4                                                             #
 # licence: CC BY-NC 4.0                                                       #
-# purpose: 1) define the Compressior class                                    #
+# purpose: 1) define the Compressor class                                     #
 #          2) use it with the pre-trained CAE to compress/decompress          #
 # =========================================================================== #
 import torch                      # 2.1.1+cu121
@@ -137,9 +137,10 @@ class Compressor():
         ###########################################################################
         # compressed folder - path to the folder with compressed chunks           #
         # output_folder     - where to save the decompressed file                 #
-        # restore_dataset   - whether to restore the original tensor dataset or   #
+        # restore_dataset   - whether to restore the original tensor dataset      #
         #                     or not (adds some computational time); if set to    #
-        #                     False, each EEG chunk will be a separate file       #
+        #                     False, each restored EEG chunk will be a separate   #
+        #                     file                                                #
         # float64           - whether to convert the decompressed file back to    #
         #                     float64, so that the size of decompressed files is  #
         #                     the same as before the compression (as CAE outputs  #
