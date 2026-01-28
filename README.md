@@ -1,5 +1,5 @@
 # 256-channel EEG Signal Compression Using a Convolutional Autoencoder: Binocular Rivalry Use Case
-This GitHub repository contains the code used for the purposes of the article *Near-lossless EEG Signal Compression Using a Convolutional Autoencoder: Case Study for 256-channel Binocular Rivalry Dataset*, published in the *Computers in Biology and Medicine* journal and available via the ScienceDirect link below. Please, cite the linked paper if you want to reference this repository in your works.
+This GitHub repository contains the code used for the purposes of the article *Near-lossless EEG Signal Compression Using a Convolutional Autoencoder: Case Study for 256-channel Binocular Rivalry Dataset*, published in the **Computers in Biology and Medicine** journal and available via the ScienceDirect link below. Please, cite the linked paper if you want to reference this repository in your works.
 
 [<img src="https://img.shields.io/badge/ScienceDirect-10.1016/j.compbiomed.2025.109888-orange.svg?logo=LOGO">](https://doi.org/10.1016/j.compbiomed.2025.109888)
 
